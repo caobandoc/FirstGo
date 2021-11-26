@@ -1,32 +1,55 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	// Declaracion de constantes
-	const pi float64 = 3.14
-	const pi2 = 3.1415
-
-	fmt.Println("pi", pi)
-	fmt.Println("pi2", pi2)
-
-	//Declaracion de variables enteras
-	//con los dos puntos se define q ya se a creado anteriormente
-	base := 12
-	var altura int = 14
-	var area int
-
-	fmt.Println(base, altura, area)
-
-	// Zero values
-	var a int
-	var b float64
-	var c string
-	var d bool
-	fmt.Println(a, b, c, d)
-
 	// Area cuadrado
 	const baseCuadrado = 10
 	areaCuadrado := baseCuadrado * baseCuadrado
 	fmt.Println("Area cuadrado: ", areaCuadrado)
+
+	x := 10
+	y := 50
+
+	// Suma
+	result := x + y
+	fmt.Println("suma:", result)
+
+	// Suma
+	result = y - x
+	fmt.Println("resta:", result)
+
+	// Multiplicacion
+	result = x * y
+	fmt.Println("Multiplicacion", result)
+
+	// Division
+	result = y / x
+	fmt.Println("Division", result)
+
+	// Modulo
+	result = y % x
+	fmt.Println("Modulo", result)
+
+	// Incremental
+	x++
+	fmt.Println("Incrementar", x)
+
+	// Decremental
+	x--
+	fmt.Println("Decrementar", x)
+
+	//Reto
+	// Area del trapecio y circulo
+	altura := 4
+	base1 := 10
+	base2 := 4
+	radio := 2
+	resultTrapecio := (base1 + base2) * altura / 2
+	fmt.Println("area trapecio", resultTrapecio)
+	resultRadio := math.Pi * math.Pow(float64(radio), 2)
+	fmt.Println("area circulo", resultRadio)
 }
