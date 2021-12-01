@@ -3,23 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	// For condicional
-	for i := 0; i <= 10; i++ {
-		fmt.Println(i)
-	}
-	fmt.Printf("\n")
-	// For while
-	counter := 0
-	for counter < 10 {
-		fmt.Println(counter)
-		counter++
-	}
+	valor1 := 1
+	//valor2 := 2
 
-	fmt.Printf("\n")
-	//For forever
-	counterForever := 0
-	for {
-		fmt.Println(counterForever)
-		counterForever++
+	if valor1 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("No es 1")
 	}
 }
