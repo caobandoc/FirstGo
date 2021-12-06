@@ -1,30 +1,39 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+func isPalindromo(text string) {
+	var textReverse string
+	text = strings.ToLower(text)
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es palindromo")
+	}
+}
 
 func main() {
-	// Array
-	var array [4]int
-	array[0] = 1
-	array[1] = 2
-	fmt.Println(array, len(array), cap(array))
+	slice := []string{"hola", "que", "hace"}
 
-	// Slice
-	slice := []int{0, 1, 2, 3, 4, 5, 6}
-	fmt.Println(slice, len(slice), cap(slice))
+	//for i, valor := range slice {
+	//para tener el indice y el "valor" el paso del slice
 
-	// Métodos en el slice
-	fmt.Println(slice[0])
-	fmt.Println(slice[:3])
-	fmt.Println(slice[2:4])
-	fmt.Println(slice[4:])
+	//for _, valor := range slice {
+	//para solo tener en "valor" el paso del slice
 
-	// Append
-	slice = append(slice, 7)
-	fmt.Println(slice)
+	//for i := range slice {
+	//para solo tener el indice del for
+	for i := range slice {
+		fmt.Println(i)
+	}
 
-	//Append nueva lista
-	newSlice := []int{8, 9, 10}
-	slice = append(slice, newSlice...)
-	fmt.Println(slice)
+	isPalindromo("Ama")
 }
