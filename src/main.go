@@ -2,30 +2,20 @@ package main
 
 import (
 	"fmt"
-	"sync"
-	"time"
 )
 
-func say(text string, wg *sync.WaitGroup) {
-
-	defer wg.Done()
-
-	fmt.Println(text)
+// Cuando esta al lado derecho de chan(<-) significa de salida
+// Cuando esta al lado izquierdo de chan(<-) significa de entrada
+func say(text string, c chan<- string) {
+	c <- text
 }
 
 func main() {
-	var wg sync.WaitGroup
+	c := make(chan string, 1)
 
 	fmt.Println("Hello")
-	wg.Add(1)
 
-	go say("world", &wg)
+	go say("Bye", c)
 
-	wg.Wait()
-
-	go func(text string) {
-		fmt.Println(text)
-	}("Adios")
-
-	time.Sleep(time.Second * 1)
+	fmt.Println(<-c)
 }
